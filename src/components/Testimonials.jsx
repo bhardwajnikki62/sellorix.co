@@ -43,7 +43,7 @@ const testimonials = [
     image: noahImg,
     quote: 'US E-com Startup',
     desc: "Inventory planning saved us from stockouts and overstock disasters Amit's forecasts are spot-on, keeping cash flow smooth.",
-    companyLogo: 'MAG'
+    companyLogo: 'Sellorix'
   },
   {
     id: 4,
@@ -53,17 +53,17 @@ const testimonials = [
     image: oliviaImg,
     quote: 'UK Based Seller',
     desc: "Amit fixed our high-spend PPC mess sales rose 60% with lower costs. Honest, results-focused pro we trust.",
-    companyLogo: 'MAG'
+    companyLogo: 'Sellorix'
   },
   {
     id: 5,
-    name: 'Daniel Harris',
+    name: 'Sara Harris',
     role: 'CEO',
     company: 'OCHEAL',
     image: sophiaWilsonImg,
     quote: 'Australia Supplement Brand Owner',
     desc: "Listing optimization + A+ content boosted conversions 40%. Our pages now convert like crazy, professional, fast results every time.",
-    companyLogo: 'MAG'
+    companyLogo: 'Sellorix'
   },
   {
     id: 6,
@@ -73,7 +73,7 @@ const testimonials = [
     image: jamesThomasImg,
     quote: 'Canada Private seller',
     desc: "CRO expertise turned our low-traffic listings into winners. Click-throughs and buys skyrocketed. Honest advice, no fluff.",
-    companyLogo: 'MAG'
+    companyLogo: 'Sellorix'
   }
 ];
 
@@ -193,7 +193,7 @@ const Testimonials = () => {
                 <img
                   src={t.image}
                   alt={t.name}
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110"
+                  className="w-full h-full object-cover group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all" />
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">

@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import Contact from '../components/Contact';
+import AnimatedMap from '../components/AnimatedMap';
 
 const ContactUs = () => {
   useEffect(() => {
@@ -9,6 +10,8 @@ const ContactUs = () => {
   return (
     <div className="pt-20 min-h-screen bg-dark-bg">
       <Contact />
+
+
 
       {/* FAQ or Additional Contact Info */}
       <section className="py-20 px-6 md:px-12 bg-gray-900/30">
@@ -48,6 +51,9 @@ const ContactUs = () => {
           </div>
         </div>
       </section>
+
+      {/* Animated Map Section */}
+      <AnimatedMap />
     </div>
   );
 };

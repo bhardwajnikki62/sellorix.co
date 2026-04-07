@@ -2,15 +2,16 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { 
-  TrendingUp, 
-  CheckCircle2, 
-  ShoppingCart, 
-  Zap, 
-  Globe, 
-  Target, 
-  BarChart3, 
-  Award, 
+import maybelline from '../assets/maybelline.png'
+import {
+  TrendingUp,
+  CheckCircle2,
+  ShoppingCart,
+  Zap,
+  Globe,
+  Target,
+  BarChart3,
+  Award,
   ArrowRight,
   Package,
   Calendar,
@@ -31,7 +32,7 @@ const TentAndTableCaseStudy = () => {
 
   useEffect(() => {
     // Hero Animations
-    gsap.fromTo('.stat-card', 
+    gsap.fromTo('.stat-card',
       { opacity: 0, scale: 0.8 },
       { opacity: 1, scale: 1, duration: 1, ease: "back.out(1.7)", stagger: 0.2 }
     );
@@ -41,8 +42,8 @@ const TentAndTableCaseStudy = () => {
       gsap.fromTo(section,
         { opacity: 0, y: 50 },
         {
-          opacity: 1, y: 0, 
-          duration: 1, 
+          opacity: 1, y: 0,
+          duration: 1,
           scrollTrigger: {
             trigger: section,
             start: "top 85%",
@@ -56,7 +57,7 @@ const TentAndTableCaseStudy = () => {
     gsap.utils.toArray('.bar-grow').forEach(bar => {
       gsap.fromTo(bar,
         { height: "0%" },
-        { 
+        {
           height: bar.getAttribute('data-height'),
           duration: 1.5,
           ease: "power4.out",
@@ -70,15 +71,15 @@ const TentAndTableCaseStudy = () => {
   }, []);
 
   const tabs = [
-    { 
-      id: 'Year 1', 
-      title: 'Year 1', 
-      content: '2022 Technical Correction and Creative Standardization: In Year 1, we overhauled the catalog structure and unified brand visuals. This eliminated customer confusion and set the stage for scalability. We also audited all product listings to identify and resolve "retail hazards."' 
+    {
+      id: 'Year 1',
+      title: 'Year 1',
+      content: '2022 Technical Correction and Creative Standardization: In Year 1, we overhauled the catalog structure and unified brand visuals. This eliminated customer confusion and set the stage for scalability. We also audited all product listings to identify and resolve "retail hazards."'
     },
-    { 
-      id: 'Year 2', 
-      title: 'Year 2', 
-      content: '2023 Full-Funnel Scaling: Building on the Year 1 foundation, we expanded into full-funnel advertising (DSP + Amazon Ads). We successfully launched 8 new high-ticket commercial inflatables and established inventory forecasting models to prepare for summer peaks.' 
+    {
+      id: 'Year 2',
+      title: 'Year 2',
+      content: '2023 Full-Funnel Scaling: Building on the Year 1 foundation, we expanded into full-funnel advertising (AMC + Amazon Ads). We successfully launched 8 new high-ticket commercial inflatables and established inventory forecasting models to prepare for summer peaks.'
     },
   ];
 
@@ -100,52 +101,53 @@ const TentAndTableCaseStudy = () => {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12 relative z-10">
           <div className="flex-1 text-center md:text-left">
             <div className="inline-flex items-center gap-2 text-primary-400 font-black uppercase tracking-widest text-xs mb-6 px-4 py-1.5 bg-primary-500/10 rounded-full border border-primary-500/20">
-               <TrendingUp className="w-4 h-4" /> 167% Higher Revenue
+              <TrendingUp className="w-4 h-4" /> 132% Higher Revenue
             </div>
             <h1 className="text-5xl md:text-8xl font-black mb-8 leading-tight tracking-tighter">
-               Tent and <span className="heading-gradient">Table</span>
+              May<span className="heading-gradient">belline</span>
             </h1>
             <p className="text-2xl text-gray-400 leading-relaxed font-light max-w-2xl">
-              Year-over-year growth achieved in June 2022 compared to June 2021 under <span className="text-white font-bold italic underline decoration-primary-500/30 underline-offset-8">MAG management</span>.
+              Year-over-year growth achieved in June 2022 compared to June 2021 under <span className="text-white font-bold italic underline decoration-primary-500/30 underline-offset-8">Sellorix </span>.
             </p>
-            
+
             <div className="flex flex-wrap items-center gap-8 mt-12 justify-center md:justify-start">
               <div className="flex items-center gap-3">
-                 <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-primary-500">
-                    <CheckCircle2 className="w-6 h-6" />
-                 </div>
-                 <span className="text-xs font-black uppercase tracking-widest text-gray-400">The Challenges</span>
+                <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-primary-500">
+                  <CheckCircle2 className="w-6 h-6" />
+                </div>
+                <span className="text-xs font-black uppercase tracking-widest text-gray-400">The Challenges</span>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-primary-500">
+                  <Zap className="w-6 h-6" />
+                </div>
+                <span className="text-xs font-black uppercase tracking-widest text-gray-400">Our Approach</span>
               </div>
               <div className="flex items-center gap-3">
-                 <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-primary-500">
-                    <Zap className="w-6 h-6" />
-                 </div>
-                 <span className="text-xs font-black uppercase tracking-widest text-gray-400">Our Approach</span>
-              </div>
-              <div className="flex items-center gap-3">
-                 <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-primary-500">
-                    <BarChart3 className="w-6 h-6" />
-                 </div>
-                 <span className="text-xs font-black uppercase tracking-widest text-gray-400">Impact</span>
+                <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-primary-500">
+                  <BarChart3 className="w-6 h-6" />
+                </div>
+                <span className="text-xs font-black uppercase tracking-widest text-gray-400">Impact</span>
               </div>
             </div>
           </div>
-          
+
           {/* Floating Product Card */}
           <div className="relative group perspective-1000 hidden lg:block">
             <div className="w-72 bg-dark-surface p-5 rounded-[32px] shadow-2xl border border-white/10 transform transition-all duration-700 hover:rotate-y-12">
               <div className="absolute top-3 right-3 bg-white/10 px-3 py-1 rounded-full text-[10px] font-black text-white/80">
                 4.9 ★★★★★
               </div>
-              <img 
-                src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?q=80&w=400&h=400&auto=format&fit=crop" 
-                alt="Tent Product" 
+              <img
+                src={maybelline}
+                alt="Tent Product"
                 className="w-full h-56 object-cover rounded-2xl mb-6 shadow-lg"
               />
               <p className="text-[10px] font-black uppercase text-primary-500 mb-1 tracking-[0.2em]">High Ticket</p>
-              <h4 className="text-sm font-bold leading-tight mb-4 text-white/90">Premium Commercial Grade White Event Tent - 20x40 Heavy Duty</h4>
+              <h4 className="text-sm font-bold leading-tight mb-4 text-white/90">Premium Eye Mascara and Lipsticks</h4>
               <div className="flex items-center justify-between border-t border-white/5 pt-4">
-                <p className="text-xl font-black text-white">$1,799.00</p>
+                <p className="text-xl font-black text-white">$149.00</p>
                 <button className="bg-primary-500 text-white p-2 rounded-xl hover:bg-primary-600 transition-colors">
                   <ShoppingCart className="w-4 h-4" />
                 </button>
@@ -163,21 +165,16 @@ const TentAndTableCaseStudy = () => {
           <section className="reveal-section mb-20">
             <h2 className="text-3xl font-bold text-white mb-8">Introduction</h2>
             <p className="text-lg leading-relaxed text-gray-400 max-w-3xl mb-6">
-              Tent and Table has been with commercial grade food and table sales, wedding tents and inflatables 
-              for over 10 years. Their offerings include tents and inflatables with styling sets built from light-grade 
-              bounce house and water slide powered by commercial blowers.
+              Maybelline Australia operates as a high-volume market leader, requiring sophisticated multi-channel synchronization across the AU marketplace. Sellorix manages the intersection of viral trend-cycles and inventory-led advertising to maintain a dominant 'Share of Voice' while protecting net margins.
             </p>
-            <p className="text-lg leading-relaxed text-gray-400 max-w-3xl">
-              They focus on quality, check availability, and invest in customer service ensuring every client 
-              receives market support and follow up.
-            </p>
+
           </section>
 
           {/* The Challenges */}
           <section className="reveal-section mb-24">
             <div className="flex items-center gap-6 mb-12">
-               <h2 className="text-4xl font-black text-white uppercase tracking-tighter">The <br /> Challenges</h2>
-               <div className="flex-1 h-[1px] bg-white/10"></div>
+              <h2 className="text-4xl font-black text-white uppercase tracking-tighter">The <br /> Challenges</h2>
+              <div className="flex-1 h-[1px] bg-white/10"></div>
             </div>
             <div className="space-y-8">
               {challenges.map((challenge, i) => (
@@ -187,8 +184,8 @@ const TentAndTableCaseStudy = () => {
                   </div>
                   <div className="pt-1">
                     <p className="text-lg text-gray-400 font-medium leading-relaxed group-hover:text-gray-200 transition-colors">
-                       <span className="font-black text-white block mb-0.5 uppercase tracking-wider text-[11px] text-primary-500">{challenge.split(':')[0]}</span>
-                       {challenge.split(':')[1]}
+                      <span className="font-black text-white block mb-0.5 uppercase tracking-wider text-[11px] text-primary-500">{challenge.split(':')[0]}</span>
+                      {challenge.split(':')[1]}
                     </p>
                   </div>
                 </div>
@@ -198,6 +195,8 @@ const TentAndTableCaseStudy = () => {
 
           {/* Our Approach */}
           <section className="reveal-section mb-24">
+            <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-indigo-600/20 blur-[140px] rounded-full pointer-events-none" />
+            <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-purple-600/15 blur-[120px] rounded-full pointer-events-none" />
             <h2 className="text-4xl font-black text-white mb-10 inline-block border-b-4 border-primary-500 pb-2">Our Approach</h2>
             <div className="flex gap-4 mb-10 overflow-x-auto whitespace-nowrap scrollbar-hide">
               {tabs.map((tab) => (
@@ -211,19 +210,19 @@ const TentAndTableCaseStudy = () => {
               ))}
             </div>
             <div className="p-10 bg-dark-surface rounded-[40px] border border-white/10 relative overflow-hidden">
-               <div className="absolute top-0 right-0 p-8 opacity-5">
-                  <PieChart className="w-40 h-40" />
-               </div>
-               <p className="text-2xl leading-relaxed text-gray-300 font-medium relative z-10 italic">
-                 "{tabs.find(t => t.id === activeTab).content}"
-               </p>
-               <div className="mt-12 flex flex-wrap gap-4 relative z-10">
-                  {['Inventory Forecasting', 'Catalog Hygiene', 'Full-Funnel Ads', 'Listing Transformation'].map(tag => (
-                    <span key={tag} className="px-4 py-2 rounded-lg bg-white/5 border border-white/5 text-[10px] uppercase font-black tracking-widest text-gray-500">
-                      {tag}
-                    </span>
-                  ))}
-               </div>
+              <div className="absolute top-0 right-0 p-8 opacity-5">
+                <PieChart className="w-40 h-40" />
+              </div>
+              <p className="text-2xl leading-relaxed text-gray-300 font-medium relative z-10 italic">
+                "{tabs.find(t => t.id === activeTab).content}"
+              </p>
+              <div className="mt-12 flex flex-wrap gap-4 relative z-10">
+                {['Inventory Forecasting', 'Catalog Hygiene', 'Full-Funnel Ads', 'Listing Transformation'].map(tag => (
+                  <span key={tag} className="px-4 py-2 rounded-lg bg-white/5 border border-white/5 text-[10px] uppercase font-black tracking-widest text-gray-500">
+                    {tag}
+                  </span>
+                ))}
+              </div>
             </div>
           </section>
         </div>
@@ -233,44 +232,44 @@ const TentAndTableCaseStudy = () => {
           <div className="sticky top-32 space-y-8">
             <div className="p-10 rounded-[40px] bg-dark-surface border border-white/10 shadow-3xl">
               <div className="mb-12 text-center pb-8 border-b border-white/5">
-                 <h3 className="text-4xl font-black text-white tracking-tighter">TENTAND<span className="text-primary-500">TABLE</span>.COM</h3>
+                <h3 className="text-4xl font-black text-white tracking-tighter">Maybelline<span className="text-primary-500"></span>.com</h3>
               </div>
 
               <div className="space-y-8">
                 <div>
-                   <p className="text-[10px] font-black uppercase text-primary-500 tracking-[0.3em] mb-4">Services Provided</p>
-                   <ul className="space-y-4 pl-2">
-                     <li className="flex items-center gap-3 text-xs font-bold text-gray-200"><Layout className="w-4 h-4 text-primary-500" /> Full Service</li>
-                     <li className="flex items-center gap-3 text-xs font-bold text-gray-200"><Layers className="w-4 h-4 text-primary-500" /> Catalog Management</li>
-                     <li className="flex items-center gap-3 text-xs font-bold text-gray-200"><Search className="w-4 h-4 text-primary-500" /> Listing Optimization</li>
-                     <li className="flex items-center gap-3 text-xs font-bold text-gray-200"><ShoppingCart className="w-4 h-4 text-primary-500" /> Amazon PPC</li>
-                   </ul>
+                  <p className="text-[10px] font-black uppercase text-primary-500 tracking-[0.3em] mb-4">Services Provided</p>
+                  <ul className="space-y-4 pl-2">
+                    <li className="flex items-center gap-3 text-xs font-bold text-gray-200"><Layout className="w-4 h-4 text-primary-500" /> Full Service</li>
+                    <li className="flex items-center gap-3 text-xs font-bold text-gray-200"><Layers className="w-4 h-4 text-primary-500" /> Catalog Management</li>
+                    <li className="flex items-center gap-3 text-xs font-bold text-gray-200"><Search className="w-4 h-4 text-primary-500" /> Listing Optimization</li>
+                    <li className="flex items-center gap-3 text-xs font-bold text-gray-200"><ShoppingCart className="w-4 h-4 text-primary-500" /> Amazon PPC</li>
+                  </ul>
                 </div>
 
                 <div className="pt-8 border-t border-white/5 grid grid-cols-2 gap-y-6">
-                   <div>
-                      <p className="text-[10px] font-black uppercase text-gray-500 mb-1">Industry</p>
-                      <p className="text-xs font-bold text-white">Event & Rentals</p>
-                   </div>
-                   <div>
-                      <p className="text-[10px] font-black uppercase text-gray-500 mb-1">Channel</p>
-                      <p className="text-xs font-bold text-white">Amazon & Walmart</p>
-                   </div>
-                   <div>
-                      <p className="text-[10px] font-black uppercase text-gray-500 mb-1">Partner Since</p>
-                      <p className="text-xs font-bold text-white">Oct 2021</p>
-                   </div>
-                   <div>
-                      <p className="text-[10px] font-black uppercase text-gray-500 mb-1">Management</p>
-                      <p className="text-xs font-bold text-white">Executive Strategy</p>
-                   </div>
+                  <div>
+                    <p className="text-[10px] font-black uppercase text-gray-500 mb-1">Industry</p>
+                    <p className="text-xs font-bold text-white">Beauty</p>
+                  </div>
+                  <div>
+                    <p className="text-[10px] font-black uppercase text-gray-500 mb-1">Channel</p>
+                    <p className="text-xs font-bold text-white">Amazon & Walmart</p>
+                  </div>
+                  <div>
+                    <p className="text-[10px] font-black uppercase text-gray-500 mb-1">Partner Since</p>
+                    <p className="text-xs font-bold text-white">Oct 2021</p>
+                  </div>
+                  <div>
+                    <p className="text-[10px] font-black uppercase text-gray-500 mb-1">Management</p>
+                    <p className="text-xs font-bold text-white">Executive Strategy</p>
+                  </div>
                 </div>
 
                 <div className="pt-8 border-t border-white/5">
-                   <p className="text-[10px] font-black uppercase text-gray-500 mb-4 tracking-widest">Client Testimonial</p>
-                   <div className="p-6 rounded-2xl bg-white/5 border border-white/5 italic text-sm text-gray-400 leading-relaxed font-medium">
-                      "MAG corrected our technical errors and unified our visual identity, setting the stage for massive growth."
-                   </div>
+                  <p className="text-[10px] font-black uppercase text-gray-500 mb-4 tracking-widest">Client Testimonial</p>
+                  <div className="p-6 rounded-2xl bg-white/5 border border-white/5 italic text-sm text-gray-400 leading-relaxed font-medium">
+                    "Sellorix corrected our technical errors and unified our visual identity, setting the stage for massive growth."
+                  </div>
                 </div>
               </div>
             </div>
@@ -279,78 +278,9 @@ const TentAndTableCaseStudy = () => {
       </div>
 
       {/* Impact Data Graphics */}
-      <section className="reveal-section py-32 bg-dark-surface/50 border-y border-white/5">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <div className="text-center mb-20">
-             <h2 className="text-5xl md:text-7xl font-black text-white mb-6">The Impact</h2>
-             <p className="text-xl text-gray-400 max-w-2xl mx-auto">Sustained performance metrics demonstrating the efficacy of the MAG partnership.</p>
-          </div>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
-            {/* Chart 1: Revenue increase */}
-            <div className="p-10 rounded-[40px] bg-dark-bg border border-white/10">
-              <h3 className="text-2xl font-black text-white mb-4">Over $1.35 million increase in June 2022</h3>
-              <p className="text-gray-500 mb-12">Year-over-year revenue comparison specifically for the month of June.</p>
-              
-              <div className="h-80 flex items-end justify-around gap-12 border-b border-white/10 pb-4 relative">
-                {/* Grid Lines */}
-                <div className="absolute top-0 left-0 w-full h-full pointer-events-none flex flex-col justify-between">
-                   {[1, 2, 3, 4].map(i => <div key={i} className="w-full h-[1px] bg-white/5"></div>)}
-                </div>
-                
-                {[
-                  { label: 'June 2021', val: '$872,086', height: '38%', color: 'bg-gray-700' },
-                  { label: 'June 2022', val: '$2,279,563', height: '100%', color: 'bg-primary-500' },
-                ].map((item, i) => (
-                  <div key={i} className="flex-1 max-w-[200px] flex flex-col justify-end items-center group relative z-10">
-                    <div className="absolute -top-12 opacity-0 group-hover:opacity-100 transition-opacity bg-white text-dark-bg px-4 py-2 rounded-xl text-xs font-black shadow-2xl">
-                      {item.val}
-                    </div>
-                    <div 
-                      className={`w-full ${item.color} rounded-t-2xl bar-grow shadow-2xl group-hover:brightness-125`}
-                      data-height={item.height}
-                      style={{ height: '0%' }}
-                    ></div>
-                    <p className="mt-8 font-black text-gray-500 uppercase tracking-widest text-[10px]">{item.label}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Chart 2: Conversion Performance */}
-            <div className="p-10 rounded-[40px] bg-dark-bg border border-white/10">
-              <h3 className="text-2xl font-black text-white mb-4">Doubled Conversion Performance</h3>
-              <p className="text-gray-500 mb-12">Conversion rate increase following brand unification and creative revamp.</p>
-              
-              <div className="h-80 flex items-end justify-between gap-4 border-b border-white/10 pb-4 relative">
-                {/* Legend Overlay */}
-                <div className="absolute top-0 right-0 flex gap-4 text-[9px] font-black uppercase tracking-tighter">
-                   <div className="flex items-center gap-2"><span className="w-3 h-3 bg-gray-600 rounded-sm"></span> Before MAG</div>
-                   <div className="flex items-center gap-2"><span className="w-3 h-3 bg-green-500 rounded-sm"></span> Managed by MAG</div>
-                </div>
-
-                {[
-                  { h: '35%', type: 'before' }, { h: '38%', type: 'before' }, { h: '42%', type: 'before' }, { h: '45%', type: 'before' },
-                  { h: '75%', type: 'after' }, { h: '82%', type: 'after' }, { h: '80%', type: 'after' }, { h: '92%', type: 'after' },
-                  { h: '88%', type: 'after' }, { h: '100%', type: 'after' }, { h: '95%', type: 'after' }, { h: '98%', type: 'after' },
-                ].map((bar, i) => (
-                  <div key={i} className="flex-1 flex flex-col justify-end h-full">
-                    <div 
-                      className={`w-full ${bar.type === 'before' ? 'bg-gray-600' : 'bg-green-500 shadow-lg shadow-green-500/20'} rounded-t-sm bar-grow`}
-                      data-height={bar.h}
-                      style={{ height: '0%' }}
-                    ></div>
-                  </div>
-                ))}
-              </div>
-              <p className="mt-8 text-center text-[10px] font-black text-gray-500 uppercase tracking-[0.4em]">Historical Performance Timeline</p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Final Action CTA */}
-      <section className="py-40 text-center bg-dark-bg relative overflow-hidden px-6">
+      <section className="py-10 text-center bg-dark-bg relative overflow-hidden px-6">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[600px] bg-primary-500/5 rounded-full blur-[120px] pointer-events-none"></div>
         <div className="max-w-4xl mx-auto relative z-10">
           <h2 className="text-5xl md:text-8xl font-black text-white mb-10 tracking-tighter leading-none">
@@ -362,23 +292,23 @@ const TentAndTableCaseStudy = () => {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-6">
             <button className="bg-primary-500 hover:bg-primary-600 text-white px-16 py-7 rounded-[24px] text-2xl font-black transition-all shadow-3xl shadow-primary-500/20 hover:scale-105 active:scale-95 group">
-              Start Your Audit
+              <a href='https://www.linkedin.com/in/amitkushwaha12'>Start Your Audit</a>
               <ArrowRight className="inline-block ml-4 w-8 h-8 group-hover:translate-x-2 transition-transform" />
             </button>
             <button className="bg-white text-dark-bg px-16 py-7 rounded-[24px] text-2xl font-black transition-all hover:scale-105 active:scale-95">
-              Talk to an Expert
+              <a href='https://calendly.com/amitkushwaha/new-meeting'>Talk to an Expert</a>
             </button>
           </div>
         </div>
       </section>
 
       {/* Footer Branding */}
-      <section className="py-20 border-t border-white/5 bg-dark-surface/50">
+      {/* <section className="py-20 border-t border-white/5 bg-dark-surface/50">
         <div className="max-w-7xl mx-auto px-6 text-center">
-           <p className="text-[10px] font-black uppercase text-gray-600 tracking-[0.5em] mb-4">Official Project Case Study</p>
-           <h6 className="text-lg font-black text-gray-500">© 2024 Sellorix Strategy Partners</h6>
+          <p className="text-[10px] font-black uppercase text-gray-600 tracking-[0.5em] mb-4">Official Project Case Study</p>
+          <h6 className="text-lg font-black text-gray-500">© 2024 Sellorix Strategy Partners</h6>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };

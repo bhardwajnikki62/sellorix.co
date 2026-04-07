@@ -34,56 +34,56 @@ const CaseStudies = () => {
 
   const cases = [
     {
-      brand: "Chirp",
-      growth: "519%",
-      label: "Growth to Date",
+      brand: "Windmill Baby",
+      growth: "142%",
+      label: "QUARTERLY REVENUE LIFT",
       image: case1,
-      desc: "Sustained revenue increase since partnering with My Amazon Guy",
+      desc: "Accelerated brand presence across global marketplaces with a full-funnel advertising strategy and conversion-led design.",
       color: "text-green-400",
       link: "/case-study/chirp"
     },
     {
-      brand: "Stamp Hub",
-      growth: "293%",
-      label: "Higher Monthly Revenue",
+      brand: "Himalayan Chef",
+      growth: "164%",
+      label: "GLOBAL REVENUE SURGE",
       image: case2,
-      desc: "A huge jump in sales coming from a revamp of various creative assets and improved PPC ads.",
+      desc: "Leveraged Himalayan Chef’s Farm- to - Fork mission to scale market share across North American and European marketplaces, achieving record-breaking seasonal sales.",
       color: "text-green-400",
       link: "/case-study/stamp-hub"
     },
     {
-      brand: "Tent and Table",
-      growth: "167%",
-      label: "Higher Revenue YoY",
+      brand: "Maybelline",
+      growth: "42% SOV",
+      label: "TOP-OF-SEARCH SHARE OF VOICE",
       image: case3,
-      desc: "Year-over-year growth achieved in June 2022 compared to June 2021 under MAG management.",
+      desc: "Dominated the Mascara and Lip Gloss categories in Australia, capturing 42% of all Top-of-Search impressions—effectively doubling the visibility of the nearest competitor during the Q4 peak.",
       color: "text-green-400",
       link: "/case-study/tent-and-table"
     },
     {
-      brand: "Heavenly Hunks",
-      growth: "60%",
-      label: "Higher Sales",
+      brand: "Linscool",
+      growth: "3.8x LTV",
+      label: "CUSTOMER ACQUISITION EFFICIENCY",
       image: case4,
-      desc: "Notable growth compared to the same month in 2022 after MAG management",
+      desc: "Engineered a 3.8x Ratio between Lifetime Value and Acquisition Cost for the Pilates line, ensuring that every pound/dollar spent on UK and Canada PPC generated a compounding return through high-velocity New-to-Brand (NTB) customer capture.",
       color: "text-green-400",
       link: "/case-study/heavenly-hunks"
     },
     {
-      brand: "Pillowflex",
-      growth: "50%",
-      label: "Sales Increase",
+      brand: "New Leaf",
+      growth: "100% Compliance",
+      label: "LAB-VERIFIED PURITY (EU STANDARDS)",
       image: case5,
-      desc: "2023 sales volume show a notable rise from the previous year, reflecting huge growth.",
+      desc: " Maintained a perfect 100% compliance rate with German health regulations by implementing batch-specific heavy metal and contaminant testing, ensuring New Leaf remains a Tier-1 Trusted brand on Amazon.de.",
       color: "text-green-400",
       link: "/case-study/pillowflex"
     },
     {
-      brand: "Chinook Seedery",
-      growth: "215%",
-      label: "Increase in Sales",
+      brand: "Cesar",
+      growth: "7.2%",
+      label: "OPERATIONAL TAcoS (TOTAL ACOS)",
       image: case6,
-      desc: "Current average weekly sales are 215% higher compared to 2020.",
+      desc: "Achieved a market-leading TAcoS of 7.2% by optimizing for high-conversion Treat keywords, ensuring that paid spend aggressively fueled organic ranking for primary category terms without eroding the brand's net profitability.",
       color: "text-green-400",
       link: "/case-study/chinook-seedery"
     }
