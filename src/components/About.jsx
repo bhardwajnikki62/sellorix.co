@@ -42,7 +42,7 @@ const About = () => {
           <div className="relative aspect-square md:aspect-[4/5] rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
             <img
               src={aboutUsImg}
-              alt="Consultancy Team"
+              alt=""
               className="w-full h-full object-cover hover:grayscale-0 transition-all duration-700 hover:scale-105"
             />
           </div>
