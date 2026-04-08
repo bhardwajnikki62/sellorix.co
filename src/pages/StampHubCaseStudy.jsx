@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import himalayanChef from '../assets/himalayan_chef.png'
+
 import {
   TrendingUp,
   CheckCircle2,
@@ -163,7 +163,7 @@ const StampHubCaseStudy = () => {
             <div className="relative z-10 bg-dark-bg p-8 rounded-[40px] border border-white/10 shadow-2xl overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-primary-500/20 rounded-full blur-[60px]"></div>
               <img
-                src={himalayanChef}
+                src="https://res.cloudinary.com/drcrqdm5b/image/upload/v1775671604/Himalayan_Chef_qm7xey.png"
                 alt="Stamp Hub Case Study"
                 className="w-full h-64 object-cover rounded-3xl mb-8 hover:grayscale-0 transition-all duration-700 hover:scale-105"
               />
