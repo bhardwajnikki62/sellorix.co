@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-primary-50: #fff5f2;
+  --color-primary-100: #ffe8df;
+  --color-primary-200: #ffc9b5;
+  --color-primary-300: #ffa285;
+  --color-primary-400: #ff754d;
+  --color-primary-500: #F95B07;
+  --color-primary-600: #e64500;
+  --color-primary-700: #bf3a00;
+  --color-primary-800: #992e00;
+  --color-primary-900: #7a2804;
+  
+  /* Overrides for existing components to use the new theme smoothly */
+  --color-indigo-300: var(--color-primary-300);
+  --color-indigo-400: var(--color-primary-400);
+  --color-indigo-500: var(--color-primary-500);
+  --color-indigo-600: var(--color-primary-600);
+  
+  --color-purple-400: var(--color-primary-400);
+  --color-purple-500: var(--color-primary-500);
+  --color-purple-600: var(--color-primary-600);
+  
+  --color-dark-bg: #050505;
+  --color-dark-surface: #121212;
+  --color-light-bg: #f9fafb;
+  --font-outfit: 'Outfit', sans-serif;
+}
+
+@layer base {
+  body {
+    font-family: 'Outfit', sans-serif;
+    @apply bg-dark-bg text-white antialiased overflow-x-hidden;
+  }
+}
+
+.heading-gradient {
+  background: linear-gradient(135deg, var(--color-primary-300) 0%, var(--color-primary-500) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
