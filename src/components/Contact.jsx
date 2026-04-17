@@ -1,9 +1,19 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
-import { Mail, MapPin, Phone } from 'lucide-react'
+import emailjs from '@emailjs/browser'
+import { Mail, MapPin, Phone, CheckCircle, AlertCircle, Loader2 } from 'lucide-react'
+
+// ⚠️ IMPORTANT: Replace these with your real EmailJS credentials.
+// Get them from https://www.emailjs.com → Sign up → Dashboard
+const EMAILJS_SERVICE_ID = 'service_9xjdno5'    // e.g. 'service_abc123'
+const EMAILJS_TEMPLATE_ID = 'template_qayq7gx'  // e.g. 'template_xyz789'
+const EMAILJS_PUBLIC_KEY = 'FvphoculhKg6RNUdR'     // e.g. 'AbCdEfGhIjKlMnOp'
 
 const Contact = () => {
   const containerRef = useRef(null)
+  const formRef = useRef(null)
+  const [status, setStatus] = useState('idle') // idle | loading | success | error
+  const [errorMsg, setErrorMsg] = useState('')
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -22,6 +32,33 @@ const Contact = () => {
 
     return () => ctx.revert()
   }, [])
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setStatus('loading')
+    setErrorMsg('')
+
+    try {
+      const result = await emailjs.sendForm(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        formRef.current,
+        EMAILJS_PUBLIC_KEY
+      )
+
+      if (result.status === 200) {
+        setStatus('success')
+        formRef.current.reset()
+        setTimeout(() => setStatus('idle'), 5000)
+      } else {
+        setStatus('error')
+        setErrorMsg('Something went wrong. Please try again.')
+      }
+    } catch (err) {
+      setStatus('error')
+      setErrorMsg(err?.text || 'Failed to send message. Please try again later.')
+    }
+  }
 
   return (
     <section id="contact" ref={containerRef} className="py-24 px-6 md:px-12 relative w-full">
@@ -70,27 +107,78 @@ const Contact = () => {
           <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-10 shadow-2xl relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-primary-600/10 blur-[80px] rounded-full pointer-events-none" />
 
-            <form className="relative z-10 flex flex-col gap-6">
+            {/* Success Message */}
+            {status === 'success' && (
+              <div className="relative z-10 flex items-center gap-3 mb-6 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400">
+                <CheckCircle className="w-5 h-5 shrink-0" />
+                <p className="text-sm font-medium">Message sent successfully! We'll get back to you within 24 hours.</p>
+              </div>
+            )}
+
+            {/* Error Message */}
+            {status === 'error' && (
+              <div className="relative z-10 flex items-center gap-3 mb-6 p-4 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400">
+                <AlertCircle className="w-5 h-5 shrink-0" />
+                <p className="text-sm font-medium">{errorMsg}</p>
+              </div>
+            )}
+
+            <form ref={formRef} onSubmit={handleSubmit} className="relative z-10 flex flex-col gap-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="flex flex-col gap-2">
                   <label className="text-sm font-medium text-gray-300">First Name</label>
-                  <input type="text" className="bg-dark-bg/50 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-primary-500 transition-colors" placeholder="John" />
+                  <input
+                    type="text"
+                    name="first_name"
+                    required
+                    className="bg-dark-bg/50 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-primary-500 transition-colors"
+                    placeholder="John"
+                  />
                 </div>
                 <div className="flex flex-col gap-2">
                   <label className="text-sm font-medium text-gray-300">Last Name</label>
-                  <input type="text" className="bg-dark-bg/50 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-primary-500 transition-colors" placeholder="Doe" />
+                  <input
+                    type="text"
+                    name="last_name"
+                    required
+                    className="bg-dark-bg/50 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-primary-500 transition-colors"
+                    placeholder="Doe"
+                  />
                 </div>
               </div>
               <div className="flex flex-col gap-2">
                 <label className="text-sm font-medium text-gray-300">Email Address</label>
-                <input type="email" className="bg-dark-bg/50 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-primary-500 transition-colors" placeholder="john@example.com" />
+                <input
+                  type="email"
+                  name="from_email"
+                  required
+                  className="bg-dark-bg/50 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-primary-500 transition-colors"
+                  placeholder="john@example.com"
+                />
               </div>
               <div className="flex flex-col gap-2">
                 <label className="text-sm font-medium text-gray-300">Message</label>
-                <textarea rows="4" className="bg-dark-bg/50 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-primary-500 transition-colors resize-none" placeholder="Tell us about your project..."></textarea>
+                <textarea
+                  rows="4"
+                  name="message"
+                  required
+                  className="bg-dark-bg/50 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-primary-500 transition-colors resize-none"
+                  placeholder="Tell us about your project..."
+                ></textarea>
               </div>
-              <button className="bg-primary-600 hover:bg-primary-500 text-white font-semibold py-4 rounded-xl transition-colors mt-2">
-                Send Message
+              <button
+                type="submit"
+                disabled={status === 'loading'}
+                className="bg-primary-600 hover:bg-primary-500 disabled:opacity-60 disabled:cursor-not-allowed text-white font-semibold py-4 rounded-xl transition-colors mt-2 flex items-center justify-center gap-2"
+              >
+                {status === 'loading' ? (
+                  <>
+                    <Loader2 className="w-5 h-5 animate-spin" />
+                    Sending...
+                  </>
+                ) : (
+                  'Send Message'
+                )}
               </button>
             </form>
           </div>
