@@ -16,6 +16,9 @@ const Contact = () => {
   const [errorMsg, setErrorMsg] = useState('')
 
   useEffect(() => {
+    // Initialize EmailJS
+    emailjs.init(EMAILJS_PUBLIC_KEY)
+
     const ctx = gsap.context(() => {
       gsap.from('.contact-item', {
         scrollTrigger: {
@@ -38,25 +41,36 @@ const Contact = () => {
     setStatus('loading')
     setErrorMsg('')
 
+    const form = formRef.current
+    const templateParams = {
+      first_name: form.first_name.value,
+      last_name: form.last_name.value,
+      from_email: form.from_email.value,
+      message: form.message.value,
+      user_name: `${form.first_name.value} ${form.last_name.value}`,
+      user_email: form.from_email.value,
+      reply_to: form.from_email.value,
+    }
+
     try {
-      const result = await emailjs.sendForm(
+      const result = await emailjs.send(
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
-        formRef.current,
-        EMAILJS_PUBLIC_KEY
+        templateParams
       )
 
       if (result.status === 200) {
         setStatus('success')
-        formRef.current.reset()
+        form.reset()
         setTimeout(() => setStatus('idle'), 5000)
       } else {
         setStatus('error')
         setErrorMsg('Something went wrong. Please try again.')
       }
     } catch (err) {
+      console.error('EmailJS Error:', err)
       setStatus('error')
-      setErrorMsg(err?.text || 'Failed to send message. Please try again later.')
+      setErrorMsg(err?.text || err?.message || 'Failed to send message. Please try again later.')
     }
   }
 
