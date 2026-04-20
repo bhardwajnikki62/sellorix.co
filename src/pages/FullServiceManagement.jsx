@@ -405,6 +405,12 @@ const FullServiceManagement = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
 
+    // Load Calendly script
+    const script = document.createElement('script');
+    script.src = "https://assets.calendly.com/assets/external/widget.js";
+    script.async = true;
+    document.body.appendChild(script);
+
     // Allow DOM to settle before registering animations
     const timer = setTimeout(() => {
       // Hero entrance
@@ -503,48 +509,12 @@ const FullServiceManagement = () => {
         </div>
 
         <div className="hero-widget flex justify-center lg:justify-end">
-          <div className="w-full max-w-[520px] bg-[#0E121E] rounded-3xl border border-white/10 shadow-2xl overflow-hidden flex flex-col md:flex-row min-h-[480px]">
-            {/* Calendar */}
-            <div className="flex-1 bg-[#1A202E] p-6 md:p-8 flex flex-col">
-              <div className="flex flex-col items-center mb-6">
-                <div className="w-12 h-12 bg-black rounded-full flex flex-col items-center justify-center p-2 mb-3 border border-white/10">
-                  <img src={mainlogo} alt="logo" />
-
-                </div>
-                <h3 className="text-base font-semibold text-center leading-snug">Meet with Sellorix Founder</h3>
-              </div>
-              <div className="flex items-center justify-center gap-4 mb-5">
-                <ChevronLeft className="w-4 h-4 opacity-40" />
-                <span className="font-bold">March 2026</span>
-                <ChevronRight className="w-4 h-4 opacity-40" />
-              </div>
-              <div className="grid grid-cols-7 text-[10px] font-bold opacity-50 mb-3 text-center">
-                {['S', 'M', 'T', 'W', 'T', 'F', 'S'].map((d, i) => <div key={i}>{d}</div>)}
-              </div>
-              <div className="grid grid-cols-7 gap-y-2 text-center text-sm">
-                {[...Array(7)].map((_, i) => <div key={i} className="text-white/10 italic">{i + 1}</div>)}
-                {[...Array(15)].map((_, i) => <div key={i + 7} className="text-white/40 hover:text-white cursor-pointer transition-colors">{i + 8}</div>)}
-                <div className="w-8 h-8 flex items-center justify-center bg-orange-500 text-white rounded-full font-bold mx-auto shadow-lg shadow-orange-500/30 text-sm">23</div>
-                {[...Array(8)].map((_, i) => <div key={i + 24} className="text-white/40 hover:text-white cursor-pointer transition-colors">{i + 24}</div>)}
-              </div>
-            </div>
-            {/* Time slots */}
-            <div className="w-full md:w-60 bg-[#0E121E] p-6 flex flex-col gap-5">
-              <div className="flex flex-col gap-3">
-                <div className="flex items-center gap-2 text-gray-400 text-sm"><MapPin className="w-4 h-4 text-orange-500" /><span>Google Meet</span></div>
-                <div className="flex items-center gap-2 text-gray-400 text-sm"><Clock className="w-4 h-4 text-orange-500" /><span>30 mins</span></div>
-              </div>
-              <div className="border-t border-white/10 pt-4">
-                <p className="text-white font-bold text-sm mb-3">Available times</p>
-                <div className="flex flex-col gap-2">
-                  {['7:45 pm', '8:15 pm', '8:45 pm', '9:15 pm'].map(t => (
-                    <button key={t} className="w-full py-2.5 rounded-xl border border-white/10 text-gray-400 hover:border-orange-500/50 hover:text-orange-400 transition-all text-sm">
-                      {t}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            </div>
+          <div className="w-full max-w-[520px] bg-[#0E121E] rounded-3xl border border-white/10 shadow-2xl overflow-hidden p-1">
+            <div 
+              className="calendly-inline-widget" 
+              data-url="https://calendly.com/amitkushwaha/new-meeting" 
+              style={{ minWidth: '320px', height: '700px' }}
+            ></div>
           </div>
         </div>
       </section >
