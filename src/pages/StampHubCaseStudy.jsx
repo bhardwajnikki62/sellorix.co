@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import himalayanChef from '../assets/himalayan_chef.png'
+import himalayanChef from '../assets/Himalayan_Chef.png'
 import {
   TrendingUp,
   CheckCircle2,
