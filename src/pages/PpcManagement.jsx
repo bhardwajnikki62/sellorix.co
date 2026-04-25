@@ -3,8 +3,8 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import ppc1 from '../assets/ppc_service_1st.webp';
 import ppcAds from '../assets/ppc_service_2nd.webp';
-import brandsAds from '../assets/Brands_ads.png';
-import displayAds from '../assets/display_ads.jpeg';
+import brandsAds from '../assets/new_amazon.jpeg';
+import displayAds from '../assets/new1_amazon.jpeg';
 import {
   ArrowRight, Target, DollarSign, Search, Database, FlaskConical, BarChart3,
   Rocket, TrendingUp, CheckCircle2, Image as ImageIcon, Video, ShoppingBag, Eye,

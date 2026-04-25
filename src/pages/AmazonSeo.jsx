@@ -7,7 +7,7 @@ import {
   ChevronDown, Image as ImageIcon, MessageSquareQuote
 } from 'lucide-react';
 
-import seoImg from '../assets/seo1.png';
+import seoImg from '../assets/new_seo2.jpeg';
 import seoOptImg from '../assets/seo_opt.png';
 
 gsap.registerPlugin(ScrollTrigger);

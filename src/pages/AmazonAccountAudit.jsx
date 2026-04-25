@@ -6,7 +6,7 @@ import {
   ClipboardList, MousePointer2, Headset, PieChart, ShieldCheck, ChevronDown
 } from 'lucide-react';
 
-import mainAuditImg from '../assets/main_account_audit.png';
+import mainAuditImg from '../assets/main_account_audit1.jpeg';
 
 gsap.registerPlugin(ScrollTrigger);
 
