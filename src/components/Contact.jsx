@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
 import emailjs from '@emailjs/browser'
+
 import { Mail, MapPin, Phone, CheckCircle, AlertCircle, Loader2 } from 'lucide-react'
 
 // ⚠️ IMPORTANT: Replace these with your real EmailJS credentials.

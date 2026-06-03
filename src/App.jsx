@@ -18,6 +18,7 @@ import PpcManagement from './pages/PpcManagement';
 import AmazonSeo from './pages/AmazonSeo';
 import AmazonAccountAudit from './pages/AmazonAccountAudit';
 import Sops from './pages/Sops';
+import Others from './pages/Others';
 import CaseStudies from './pages/CaseStudies';
 import CaseStudyDetail from './pages/CaseStudyDetail';
 import StampHubCaseStudy from './pages/StampHubCaseStudy';
@@ -54,6 +55,7 @@ function App() {
         <Route path="/services/amazon-seo" element={<AmazonSeo />} />
         <Route path="/services/amazon-audit" element={<AmazonAccountAudit />} />
         <Route path="/services/sops" element={<Sops />} />
+        <Route path="/services/others" element={<Others />} />
         <Route path="/case-studies" element={<CaseStudies />} />
         <Route path="/case-study/chirp" element={<CaseStudyDetail />} />
         <Route path="/case-study/stamp-hub" element={<StampHubCaseStudy />} />

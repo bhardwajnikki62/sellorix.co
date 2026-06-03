@@ -50,6 +50,7 @@ const Header = ({ logoUrl = mainLogo }) => {
                 <Link to="/services/amazon-seo" className="w-full px-4 py-2.5 text-center text-gray-300 hover:bg-gray-800 hover:text-indigo-400 transition-colors">Amazon SEO</Link>
                 <Link to="/services/amazon-audit" className="w-full px-4 py-2.5 text-center text-gray-300 hover:bg-gray-800 hover:text-indigo-400 transition-colors">Account Audit</Link>
                 <Link to="/services/sops" className="w-full px-4 py-2.5 text-center text-gray-300 hover:bg-gray-800 hover:text-indigo-400 transition-colors">SOPs</Link>
+                <Link to="/services/others" className="w-full px-4 py-2.5 text-center text-gray-300 hover:bg-gray-800 hover:text-indigo-400 transition-colors">Other Services</Link>
               </div>
             </div>
           </div>
@@ -95,6 +96,7 @@ const Header = ({ logoUrl = mainLogo }) => {
               <Link to="/services/amazon-seo" onClick={() => setIsMobileMenuOpen(false)} className="w-full py-2 text-center text-gray-400 hover:text-indigo-400">Amazon SEO</Link>
               <Link to="/services/amazon-audit" onClick={() => setIsMobileMenuOpen(false)} className="w-full py-2 text-center text-gray-400 hover:text-indigo-400">Account Audit</Link>
               <Link to="/services/sops" onClick={() => setIsMobileMenuOpen(false)} className="w-full py-2 text-center text-gray-400 hover:text-indigo-400">SOPs</Link>
+              <Link to="/services/others" onClick={() => setIsMobileMenuOpen(false)} className="w-full py-2 text-center text-gray-400 hover:text-indigo-400">Other Services</Link>
             </div>
           </div>
 
