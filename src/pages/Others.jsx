@@ -3,7 +3,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Account from '../assets/account.jpeg'
 import Compliance from '../assets/compliance.jpeg'
-import FBA from '../assets/fba.jpeg'
+import FBA from '../assets/FBA.jpeg'
 import Storage from '../assets/storage.jpeg'
 import Returns from '../assets/return.jpeg'
 import Tax from '../assets/taxes and vat.jpeg'
